@@ -21,10 +21,14 @@ public class Keyz_Misc_ResourcesMod : Mod
         harmony.PatchAll();
     }
 
+    public AssetBundle bundleInt;
+
     public AssetBundle MainBundle
     {
         get
         {
+            if(bundleInt != null) return bundleInt;
+
             string text = "";
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
@@ -54,19 +58,9 @@ public class Keyz_Misc_ResourcesMod : Mod
                 ModLog.Debug($"[{allAssetName}]");
             }
 
-            return bundle;
-        }
-    }
+            bundleInt = bundle;
 
-    public static void ShaderFromAssetBundle(ShaderTypeDef __instance, ref Shader ___shaderInt)
-    {
-        if (__instance is KMR_ShaderTypeDef)
-        {
-            ___shaderInt = Shaders.AssetBundle.LoadAsset<Shader>(__instance.shaderPath);
-            if (___shaderInt is null)
-            {
-                Log.Error($"Failed to load Shader from path <text>\"{__instance.shaderPath}\"</text>");
-            }
+            return bundleInt;
         }
     }
 }

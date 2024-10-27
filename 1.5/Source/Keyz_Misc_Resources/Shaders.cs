@@ -9,7 +9,6 @@ namespace Keyz_Misc_Resources;
 [StaticConstructorOnStartup]
 public static class Shaders
 {
-    private static AssetBundle bundleInt;
     private static Dictionary<string, Shader> lookupShaders;
 
     public static readonly Shader LiquidMetal = LoadShader(Path.Combine("Assets", "Shaders", "LiquidMetal.shader"));
@@ -20,21 +19,6 @@ public static class Shaders
     public static readonly Shader Swirl = LoadShader(Path.Combine("Assets", "Shaders", "Swirl.shader"));
     public static readonly Shader ZoomShader = LoadShader(Path.Combine("Assets", "Shaders", "ZoomShader.shader"));
 
-    public static AssetBundle AssetBundle
-    {
-        get
-        {
-            if (bundleInt != null)
-            {
-                return bundleInt;
-            }
-
-            bundleInt = Keyz_Misc_ResourcesMod.mod.MainBundle;
-            ModLog.Debug($"bundleInt: {bundleInt.name}");
-
-            return bundleInt;
-        }
-    }
 
     public static Shader LoadShader(string shaderName)
     {
@@ -42,7 +26,7 @@ public static class Shaders
         if (!lookupShaders.ContainsKey(shaderName))
         {
             ModLog.Debug($"lookupShaders: {lookupShaders.ToList().Count}");
-            lookupShaders[shaderName] = AssetBundle.LoadAsset<Shader>(shaderName);
+            lookupShaders[shaderName] = Keyz_Misc_ResourcesMod.mod.MainBundle.LoadAsset<Shader>(shaderName);
         }
 
         Shader shader = lookupShaders[shaderName];
