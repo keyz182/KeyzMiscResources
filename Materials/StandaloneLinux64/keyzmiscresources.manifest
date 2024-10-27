@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+CRC: 1044876325
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0ff96e06d9da00b4b7a1fd47ea3c0800
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c18a1b9e3ccedc0de89fd407c935eadb
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 12001, guid: 0000000000000000e000000000000000, type: 0}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Shaders/BlackHole.shader
+- Assets/Shaders/Swirl.shader
+- Assets/Fonts/OptimusPrincepsSemiBold.ttf
+- Assets/Shaders/LiquidMetal.shader
+- Assets/Shaders/Unlit_ZoomShader.mat
+- Assets/Shaders/LiquidMetalSimplex.shader
+- Assets/Shaders/Unlit_LiquidMetalSimplex.mat
+- Assets/Shaders/ZoomShader.shader
+- Assets/Shaders/Shield.shader
+- Assets/Shaders/LiquidMetalCracked.shader
+- Assets/Fonts/BossBar.guiskin
+- Assets/Shaders/BlackHole.mat
+- Assets/Shaders/Unlit_LiquidMetalCracked.mat
+- Assets/Fonts/OptimusPrinceps.ttf
+- Assets/Shaders/LiquidMetal.mat
+- Assets/Shaders/Unlit_Shield.mat
+- Assets/Shaders/Swirl.mat
+Dependencies: []
