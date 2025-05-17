@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <ShaderTypeDef>
+        <defName>KMR_Fire</defName>
+        <shaderPath>Assets/Shaders/fire.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
         <defName>KMR_LiquidMetal</defName>
         <shaderPath>Assets/Shaders/LiquidMetal.shader</shaderPath>
         <modExtensions>

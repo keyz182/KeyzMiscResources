@@ -18,12 +18,13 @@
             Blend One Zero
             Lighting Off
             Fog{ Mode Off }
-                
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             // make fog work
             #pragma multi_compile_fog
+
 
             #include "UnityCG.cginc"
             #include "Packages/jp.keijiro.noiseshader/Shader/SimplexNoise3D.hlsl"
@@ -69,7 +70,7 @@
                                        height(p+NE.yx)-height(p-NE.yx) ));
             }
             float3 diffuse(float2 p) {
-                
+
                 float2 uv = p;
 	            float res = 1.;
                 for (int i = 0; i < 3; i++) {
@@ -77,7 +78,7 @@
     	            uv = uv.yx;
                     uv.x += res*.1;
                 }
-                
+
                 return tex2D(_MainTex, uv).xyz;
             }
 
@@ -94,16 +95,16 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 bg = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.uv2));
-                
+
                 fixed4 tex = tex2D(_MainTex, UNITY_PROJ_COORD(i.uv));
                 float2 uv = (i.vertex / _ScreenParams.xy - .05)/2;
-                
+
                 float3 lightDir = normalize(float3(sin(_Time.x),1.,cos(_Time.x)));
-                
+
                 float3 norm3d = normalize(float3(normal(uv),1.).xzy);
                 float3 dif = diffuse(uv);
                 dif *= .25+max(0.,dot(norm3d,lightDir));
-                
+
                 float3 view = normalize(float3(uv,-1.).xzy);
                 float3 spec = tex2D(_MainTex, reflect(view, norm3d)).xyz* max(0.,dot(-norm3d,view));
                 fixed4 genned = float4(lerp(dif,spec,.5), tex.a) ;
@@ -114,14 +115,14 @@
                 float3 noiseInput;
                 noiseInput.xy = noiseUv;
                 noiseInput.z = _Time.x*60;
-                
+
                 float noise = SimplexNoise(noiseInput);
 
                 output.xyz = output.xyz * ((noise + 4) / 6);
 
                 return output;
 
-                
+
             }
             ENDCG
         }

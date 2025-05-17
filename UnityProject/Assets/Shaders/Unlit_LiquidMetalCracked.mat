@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Unlit_LiquidMetalCracked
-  m_Shader: {fileID: 4800000, guid: 9a33bf0a3e5a7a745b56ccc549668526, type: 3}
+  m_Shader: {fileID: 4800000, guid: 36117a96bd84edf47be4076add2ecdbb, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

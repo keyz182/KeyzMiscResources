@@ -11,6 +11,7 @@ public static class Shaders
 {
     private static Dictionary<string, Shader> lookupShaders;
 
+    public static readonly Shader Fire = LoadShader(Path.Combine("Assets", "Shaders", "fire.shader"));
     public static readonly Shader LiquidMetal = LoadShader(Path.Combine("Assets", "Shaders", "LiquidMetal.shader"));
     public static readonly Shader LiquidMetalSimplex = LoadShader(Path.Combine("Assets", "Shaders", "LiquidMetalSimplex.shader"));
     public static readonly Shader LiquidMetalCracked = LoadShader(Path.Combine("Assets", "Shaders", "LiquidMetalCracked.shader"));

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2669645869
+CRC: 857097078
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b5ad6b892f31d0fc999abe09edc524ff
+    Hash: 56626d7332527da90691a69027a27214
   TypeTreeHash:
     serializedVersion: 2
     Hash: c18a1b9e3ccedc0de89fd407c935eadb
@@ -23,21 +23,23 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Shaders/BlackHole.shader
-- Assets/Shaders/Swirl.shader
-- Assets/Fonts/OptimusPrincepsSemiBold.ttf
-- Assets/Shaders/LiquidMetal.shader
 - Assets/Shaders/Unlit_ZoomShader.mat
-- Assets/Shaders/LiquidMetalSimplex.shader
-- Assets/Shaders/Unlit_LiquidMetalSimplex.mat
+- Assets/Shaders/Fire.mat
+- Assets/Shaders/BlackHole.mat
+- Assets/Shaders/LiquidMetal.mat
 - Assets/Shaders/ZoomShader.shader
+- Assets/Shaders/LiquidMetal.shader
+- Assets/Shaders/Unlit_Shield.mat
+- Assets/Shaders/fire.shader
 - Assets/Shaders/Shield.shader
 - Assets/Shaders/LiquidMetalCracked.shader
-- Assets/Fonts/BossBar.guiskin
-- Assets/Shaders/BlackHole.mat
-- Assets/Shaders/Unlit_LiquidMetalCracked.mat
+- Assets/Shaders/LiquidMetalSimplex.shader
+- Assets/Shaders/Unlit_LiquidMetalSimplex.mat
+- Assets/Shaders/BlackHole.shader
 - Assets/Fonts/OptimusPrinceps.ttf
-- Assets/Shaders/LiquidMetal.mat
-- Assets/Shaders/Unlit_Shield.mat
+- Assets/Shaders/Unlit_LiquidMetalCracked.mat
 - Assets/Shaders/Swirl.mat
+- Assets/Fonts/OptimusPrincepsSemiBold.ttf
+- Assets/Shaders/Swirl.shader
+- Assets/Fonts/BossBar.guiskin
 Dependencies: []

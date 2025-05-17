@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BlackHole
-  m_Shader: {fileID: 4800000, guid: be51c2200d664a6eb69c3c4953f232da, type: 3}
+  m_Shader: {fileID: 4800000, guid: d74dbd87da504f348b8948bcbcf9701a, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
