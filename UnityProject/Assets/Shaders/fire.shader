@@ -1,16 +1,15 @@
-﻿﻿Shader "Unlit/Fire"
+﻿/// Based on https://www.shadertoy.com/view/MtcGD7#
+Shader "Unlit/Fire"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Mask("Mask", 2D) = "white" {}
     }
 
         SubShader
     {
        Tags{ "Queue" = "Transparent" "RenderType" = "Transparent" }
         LOD 100
-
         GrabPass{ "_GrabTexture" }
 
         Pass
@@ -23,40 +22,29 @@
 
             CGPROGRAM
             #pragma vertex vert
-            #pragma fragment mainImage
+            #pragma fragment frag
+            // make fog work
+            #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
 
             struct appdata
             {
                 float4 vertex : POSITION;
-                float4 uv : TEXCOORD0;
-                float4 uv2 : TEXCOORD1;
-                float4 uv3 : TEXCOORD2;
+                float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
-                //our vertex position after projection
+                float2 uv : TEXCOORD0;
+                float4 uv2 : TEXCOORD1;
+                UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-
-                //our UV coordinate on the GrabTexture
-                float4 uv : TEXCOORD0;
             };
 
-            float4 _Mask_ST;
             sampler2D _GrabTexture;
-            sampler2D _Mask;
-            half _Magnification;
-            float4 _UVCenterOffset;
-
-            v2f vert(appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = ComputeGrabScreenPos(o.vertex);
-                return o;
-            }
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
 
             float3 rgb2hsv(float3 c)
             {
@@ -97,10 +85,21 @@
                 return total;
             }
 
-            // fixed4 frag(v2f i) : COLOR
-            float4 mainImage(v2f i) : SV_Target
+           v2f vert (appdata v)
             {
-                fixed4 fragColor = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.uv));
+                v2f o;
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                UNITY_TRANSFER_FOG(o,o.vertex);
+                o.uv2 = ComputeGrabScreenPos(UnityObjectToClipPos(v.vertex));
+                return o;
+            }
+
+            float4 frag(v2f i) : SV_Target
+            {
+                fixed4 bg = tex2Dproj(_GrabTexture, UNITY_PROJ_COORD(i.uv2));
+                fixed4 tex = tex2D(_MainTex, UNITY_PROJ_COORD(i.uv));
+
                 fixed4 fragCoord = i.vertex;
 
                 const float3 c1 = float3(0.5, 0.0, 0.1);
@@ -112,7 +111,7 @@
 
                 float2 speed = float2(1.2, 0.1);
                 float shift = 1.327+sin(_Time.y*2.0)/2.4;
-                float alpha = 1.0;
+                float alpha = tex.a;
 
                 //change the constant term for all kinds of cool distance versions,
                 //make plus/minus to switch between
@@ -137,9 +136,10 @@
                 hsv.z *= hsv.y * 1.13;
                 hsv.y = (2.2-hsv.z*.9)*1.20;
                 color = hsv2rgb(hsv);
-                fragColor *= float4(color.x, color.y, color.z, alpha);
 
-                return fragColor;
+                float4 genned = float4(color.x, color.y, color.z, alpha);
+
+                return lerp(bg, genned, alpha);
             }
             ENDCG
         }
