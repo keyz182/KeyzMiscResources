@@ -29,21 +29,20 @@ public class Keyz_Misc_ResourcesMod : Mod
         {
             if(bundleInt != null) return bundleInt;
 
-            string text = "";
+            string bundlePath = "";
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                text = "StandaloneOSX";
+                bundlePath = Path.Combine(Content.RootDir, $@"1.6\Materials\keyzmiscresources_mac");
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                text = "StandaloneWindows64";
+                bundlePath = Path.Combine(Content.RootDir, $@"1.6\Materials\keyzmiscresources_windows");
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                text = "StandaloneLinux64";
+                bundlePath = Path.Combine(Content.RootDir, $@"1.6\Materials\keyzmiscresources_linux");
             }
 
-            string bundlePath = Path.Combine(Content.RootDir, $@"1.5\Materials\{text}\keyzmiscresources");
             Log.Message("Bundle Path: " + bundlePath);
 
             AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);

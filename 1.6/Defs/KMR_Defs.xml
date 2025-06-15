@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ShaderTypeDef>
+        <defName>KMR_Fire</defName>
+        <shaderPath>Assets/Shaders/fire.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_LiquidMetal</defName>
+        <shaderPath>Assets/Shaders/LiquidMetal.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_LiquidMetalSimplex</defName>
+        <shaderPath>Assets/Shaders/LiquidMetalSimplex.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_LiquidMetalCracked</defName>
+        <shaderPath>Assets/Shaders/LiquidMetalCracked.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_BlackHole</defName>
+        <shaderPath>Assets/Shaders/BlackHole.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_Shield</defName>
+        <shaderPath>Assets/Shaders/Shield.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_Swirl</defName>
+        <shaderPath>Assets/Shaders/Swirl.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+
+    <ShaderTypeDef>
+        <defName>KMR_ZoomShader</defName>
+        <shaderPath>Assets/Shaders/ZoomShader.shader</shaderPath>
+        <modExtensions>
+            <li Class="Keyz_Misc_Resources.KMRDefModExtension" />
+        </modExtensions>
+    </ShaderTypeDef>
+</Defs>

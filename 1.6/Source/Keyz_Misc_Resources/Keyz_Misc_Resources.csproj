@@ -29,14 +29,15 @@
     <!--   <Private>False</Private> -->
     <!-- </Reference> -->
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Unity\Hub\Editor\2019.4.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Unity\Hub\Editor\2019.4.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>../../../../../RimWorldWin64_Data/Managed/UnityEngine.AssetBundleModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+          <HintPath>../../../../../RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\Unity\Hub\Editor\2019.4.30f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>../../../../../RimWorldWin64_Data/Managed/UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -54,7 +55,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'@(Reference->WithMetadataValue('Identity', 'Assembly-CSharp')->Metadata('HintPath')->Exists())' == ''">
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5-*"/>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6-*"/>
   </ItemGroup>
   <PropertyGroup>
     <StartAction>Program</StartAction>

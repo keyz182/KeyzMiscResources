@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3058454817
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: keyzmiscresources_windows
+      Dependencies: {}

@@ -1,0 +1,52 @@
+ManifestFileVersion: 0
+CRC: 30725834
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 84248eee65e263c139a66722534a4e50
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9cba89da83f1797674eaef94ae381442
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 84248eee65e263c139a66722534a4e50
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 12001, guid: 0000000000000000e000000000000000, type: 0}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.IMGUIModule
+  ClassName: UnityEngine.GUISettings
+- AssemblyName: UnityEngine.IMGUIModule
+  ClassName: UnityEngine.GUIStyle
+Assets:
+- Assets/Shaders/Unlit_Shield.mat
+- Assets/Shaders/Unlit_ZoomShader.mat
+- Assets/Shaders/Swirl.mat
+- Assets/Shaders/LiquidMetal.shader
+- Assets/Shaders/Unlit_LiquidMetalCracked.mat
+- Assets/Shaders/LiquidMetal.mat
+- Assets/Shaders/Unlit_LiquidMetalSimplex.mat
+- Assets/Fonts/BossBar.guiskin
+- Assets/Fonts/OptimusPrincepsSemiBold.ttf
+- Assets/Shaders/Swirl.shader
+- Assets/Shaders/Shield.shader
+- Assets/Shaders/fire.shader
+- Assets/Shaders/BlackHole.shader
+- Assets/Shaders/ZoomShader.shader
+- Assets/Fonts/OptimusPrinceps.ttf
+- Assets/Shaders/BlackHole.mat
+- Assets/Shaders/LiquidMetalSimplex.shader
+- Assets/Shaders/LiquidMetalCracked.shader
+- Assets/Shaders/Fire.mat
+Dependencies: []
